@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Krishna Thankey — Voice Over Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --ink:        #16120a;
+  --parchment:  #f8f3ea;
+  --warm-white: #fdfaf4;
+  --gold:       #b8882a;
+  --gold-light: #d4aa5a;
+  --gold-pale:  #f0e4c4;
+  --rust:       #8b3a1a;
+  --sage:       #4a5c47;
+  --mist:       #e6dece;
+  --mid:        #5a4a30;
+  --shadow:     rgba(22,18,10,0.12);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--parchment);color:var(--ink);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:18px 48px;background:rgba(248,243,234,0.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(184,136,42,0.15);transition:all 0.3s ease;}
+nav.scrolled{padding:12px 48px;background:rgba(248,243,234,0.97);box-shadow:0 2px 24px var(--shadow);}
+.nav-brand{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--ink);letter-spacing:0.5px;}
+.nav-brand span{color:var(--gold);font-style:italic;}
+.nav-links{display:flex;gap:32px;}
+.nav-links a{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mid);text-decoration:none;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover{color:var(--gold);}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:120px 48px 80px;gap:60px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 100% 50%,rgba(184,136,42,0.08) 0%,transparent 60%),radial-gradient(ellipse 50% 50% at 0% 100%,rgba(139,58,26,0.06) 0%,transparent 55%);}
+.hero-left{position:relative;z-index:1;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:28px;opacity:0;animation:fadeUp 0.8s ease 0.3s forwards;}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(56px,7vw,88px);font-weight:700;line-height:0.92;letter-spacing:-2px;color:var(--ink);opacity:0;animation:fadeUp 0.9s ease 0.45s forwards;}
+.hero h1 .italic{font-style:italic;color:var(--gold);}
+.hero h1 .light{font-weight:400;}
+.hero-rule{width:64px;height:2px;background:linear-gradient(90deg,var(--gold),var(--rust));margin:32px 0;opacity:0;animation:fadeUp 0.8s ease 0.6s forwards;}
+.hero-desc{font-family:'Cormorant Garamond',serif;font-size:clamp(17px,2vw,21px);font-weight:300;font-style:italic;color:var(--mid);line-height:1.85;max-width:480px;opacity:0;animation:fadeUp 0.9s ease 0.75s forwards;}
+.hero-cta-row{display:flex;gap:16px;margin-top:40px;flex-wrap:wrap;opacity:0;animation:fadeUp 0.9s ease 0.9s forwards;}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;padding:13px 28px;background:var(--ink);color:var(--parchment);font-size:12px;letter-spacing:2.5px;text-transform:uppercase;text-decoration:none;border-radius:2px;font-weight:500;transition:all 0.3s ease;}
+.btn-primary:hover{background:var(--gold);transform:translateY(-2px);box-shadow:0 8px 24px var(--shadow);}
+.btn-outline{display:inline-flex;align-items:center;gap:10px;padding:13px 28px;background:transparent;color:var(--ink);font-size:12px;letter-spacing:2.5px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(22,18,10,0.25);border-radius:2px;font-weight:500;transition:all 0.3s ease;}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);}
+
+/* Hero right */
+.hero-right{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:20px;opacity:0;animation:fadeIn 1.2s ease 0.8s forwards;}
+.waveform-visual{width:100%;max-width:400px;background:linear-gradient(135deg,var(--ink) 0%,#2a1e0a 100%);border-radius:4px;padding:40px 36px;position:relative;overflow:hidden;}
+.waveform-visual::before{content:'\275D';position:absolute;top:-10px;right:20px;font-family:'Playfair Display',serif;font-size:120px;color:rgba(184,136,42,0.08);line-height:1;pointer-events:none;}
+.wv-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);margin-bottom:20px;font-weight:500;}
+.wv-bars{display:flex;align-items:center;gap:3px;height:64px;margin-bottom:24px;}
+.wv-bar{flex:1;background:rgba(184,136,42,0.25);border-radius:2px;animation:barPulse 1.8s ease-in-out infinite;}
+.wv-bar:nth-child(odd){animation-delay:0.15s;}
+.wv-bar:nth-child(3n){animation-delay:0.3s;}
+.wv-bar:nth-child(4n){animation-delay:0.45s;}
+.wv-tagline{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;font-weight:300;color:var(--parchment);line-height:1.5;}
+.wv-tagline strong{color:var(--gold-light);font-style:normal;font-weight:400;}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;width:100%;max-width:400px;}
+.stat-box{background:rgba(255,255,255,0.6);border:1px solid rgba(184,136,42,0.2);border-radius:3px;padding:16px 14px;text-align:center;}
+.stat-num{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--ink);display:block;}
+.stat-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-top:4px;display:block;line-height:1.4;}
+
+/* CLIENT STRIP */
+.client-strip{background:var(--ink);padding:24px 48px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;}
+.client-strip-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:500;white-space:nowrap;}
+.client-divider{width:1px;height:20px;background:rgba(184,136,42,0.3);}
+.infosys-tag{display:inline-flex;align-items:center;gap:10px;background:rgba(184,136,42,0.12);border:1px solid rgba(184,136,42,0.28);border-radius:2px;padding:7px 18px;}
+.infosys-tag span{color:rgba(248,243,234,0.85);font-size:13px;letter-spacing:0.3px;font-family:'Cormorant Garamond',serif;font-style:italic;}
+.infosys-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite;flex-shrink:0;}
+
+/* SERVICES */
+.services{padding:100px 48px;max-width:1100px;margin:0 auto;}
+.section-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:14px;display:block;}
+.section-h2{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,54px);font-weight:400;color:var(--ink);line-height:1.1;margin-bottom:60px;}
+.section-h2 em{font-style:italic;color:var(--gold);}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px;}
+.service-card{background:var(--warm-white);border:1px solid rgba(184,136,42,0.12);padding:36px 32px;position:relative;transition:all 0.3s ease;}
+.service-card:hover{background:#fff;border-color:rgba(184,136,42,0.35);transform:translateY(-4px);box-shadow:0 16px 48px var(--shadow);}
+.service-icon{font-size:28px;margin-bottom:20px;display:block;}
+.service-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:var(--ink);margin-bottom:12px;}
+.service-desc{font-size:13px;color:var(--mid);line-height:1.75;font-weight:300;}
+.service-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--rust));transform:scaleX(0);transform-origin:left;transition:transform 0.35s ease;}
+.service-card:hover::after{transform:scaleX(1);}
+
+/* RECORDINGS */
+.recordings{background:linear-gradient(180deg,#f0e8d4 0%,var(--parchment) 100%);padding:100px 48px;}
+.recordings-inner{max-width:900px;margin:0 auto;}
+.track-list{display:flex;flex-direction:column;gap:3px;}
+.track{background:rgba(253,250,244,0.85);border:1px solid rgba(184,136,42,0.15);border-radius:3px;overflow:hidden;transition:all 0.3s ease;position:relative;}
+.track::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--gold),var(--rust));transform:scaleY(0);transform-origin:bottom;transition:transform 0.3s ease;}
+.track.playing::before,.track:hover::before{transform:scaleY(1);}
+.track.playing{background:rgba(253,250,244,1);border-color:rgba(184,136,42,0.4);box-shadow:0 8px 32px var(--shadow);}
+.track-header{display:flex;align-items:center;gap:20px;padding:24px 28px;}
+.track-rank{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:rgba(184,136,42,0.2);min-width:40px;text-align:center;line-height:1;}
+.track.playing .track-rank{color:var(--gold);}
+.play-btn{width:50px;height:50px;border-radius:50%;background:var(--ink);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.25s ease;box-shadow:0 4px 16px rgba(22,18,10,0.2);}
+.play-btn:hover{background:var(--gold);transform:scale(1.08);}
+.track.playing .play-btn{background:var(--rust);}
+.track-info{flex:1;min-width:0;}
+.track-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:3px;}
+.track-source{font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;color:var(--rust);margin-bottom:14px;}
+.track-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.track-duration{font-size:12px;color:var(--mid);letter-spacing:1px;font-weight:500;}
+.track-badge{font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border-radius:2px;font-weight:600;}
+.badge-classic{background:rgba(139,58,26,0.1);color:var(--rust);border:1px solid rgba(139,58,26,0.2);}
+.badge-personal{background:rgba(74,92,71,0.1);color:var(--sage);border:1px solid rgba(74,92,71,0.2);}
+.badge-literary{background:rgba(184,136,42,0.1);color:var(--gold);border:1px solid rgba(184,136,42,0.25);}
+.badge-nature{background:rgba(74,92,71,0.12);color:var(--sage);border:1px solid rgba(74,92,71,0.2);}
+.track-stars{color:var(--gold);font-size:11px;letter-spacing:1px;}
+.track-progress{padding:0 28px 22px 88px;}
+.progress-bar{width:100%;height:3px;background:rgba(184,136,42,0.15);border-radius:2px;cursor:pointer;position:relative;}
+.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--gold),var(--rust));border-radius:2px;transition:width 0.1s linear;position:relative;}
+.progress-fill::after{content:'';position:absolute;right:-5px;top:50%;transform:translateY(-50%);width:11px;height:11px;border-radius:50%;background:var(--gold);opacity:0;transition:opacity 0.2s;box-shadow:0 2px 8px rgba(184,136,42,0.4);}
+.progress-bar:hover .progress-fill::after{opacity:1;}
+.time-row{display:flex;justify-content:space-between;font-size:11px;color:var(--mid);margin-top:8px;letter-spacing:0.5px;}
+.track.playing
+
+/* INFOSYS */
+.infosys-section{background:linear-gradient(135deg,#1a1209 0%,#2d1e08 50%,#1a1209 100%);padding:80px 48px;position:relative;overflow:hidden;}
+.infosys-section::before{content:'INFOSYS';position:absolute;right:-40px;top:50%;transform:translateY(-50%);font-family:'Playfair Display',serif;font-size:180px;font-weight:700;color:rgba(184,136,42,0.04);line-height:1;white-space:nowrap;pointer-events:none;}
+.infosys-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.infosys-h{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:400;color:var(--parchment);line-height:1.15;margin-bottom:24px;margin-top:10px;}
+.infosys-h em{font-style:italic;color:var(--gold-light);}
+.infosys-desc{font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;font-weight:300;color:rgba(248,243,234,0.75);line-height:1.8;}
+.infosys-right{display:flex;flex-direction:column;gap:12px;}
+.infosys-card{background:rgba(255,255,255,0.05);border:1px solid rgba(184,136,42,0.2);border-radius:3px;padding:20px 24px;display:flex;align-items:center;gap:16px;transition:all 0.3s ease;}
+.infosys-card:hover{background:rgba(184,136,42,0.1);border-color:rgba(184,136,42,0.4);transform:translateX(6px);}
+.ic-icon{font-size:22px;flex-shrink:0;}
+.ic-title{font-size:14px;font-weight:600;color:var(--parchment);margin-bottom:2px;letter-spacing:0.3px;}
+.ic-sub{font-size:12px;color:rgba(184,136,42,0.8);letter-spacing:0.5px;}
+
+/* ABOUT */
+.about{padding:100px 48px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.about-quote-block{background:var(--ink);border-radius:4px;padding:52px 48px;position:relative;overflow:hidden;}
+.about-quote-block::before{content:'\201C';position:absolute;top:-30px;left:24px;font-family:'Playfair Display',serif;font-size:220px;color:rgba(184,136,42,0.08);line-height:1;pointer-events:none;}
+.about-text{font-family:'Cormorant Garamond',serif;font-size:clamp(19px,2.2vw,24px);font-weight:300;font-style:italic;color:var(--parchment);line-height:1.85;position:relative;z-index:1;}
+.about-text strong{color:var(--gold-light);font-style:normal;font-weight:500;}
+.about-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:36px;position:relative;z-index:1;}
+.atag{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mist);border:1px solid rgba(184,136,42,0.25);padding:5px 12px;border-radius:2px;}
+.credential-list{display:flex;flex-direction:column;gap:0;}
+.credential{padding:24px 0;border-bottom:1px solid rgba(184,136,42,0.15);display:flex;gap:18px;align-items:flex-start;}
+.credential:first-child{padding-top:0;}
+.cred-icon{width:40px;height:40px;flex-shrink:0;background:rgba(184,136,42,0.08);border:1px solid rgba(184,136,42,0.2);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.cred-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.cred-sub{font-size:13px;color:var(--mid);line-height:1.6;}
+
+/* CONTACT */
+.contact{padding:100px 48px 80px;max-width:700px;margin:0 auto;text-align:center;}
+.contact .section-h2{margin-bottom:20px;}
+.contact-sub{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;font-weight:300;color:var(--mid);line-height:1.7;margin-bottom:48px;}
+.contact-cards{display:flex;flex-direction:column;gap:12px;margin-bottom:40px;align-items:center;}
+.contact-card{display:flex;align-items:center;gap:16px;background:var(--warm-white);border:1px solid rgba(184,136,42,0.2);border-radius:3px;padding:18px 28px;width:100%;max-width:420px;transition:all 0.3s ease;text-decoration:none;}
+.contact-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 8px 24px var(--shadow);}
+.cc-icon{font-size:20px;flex-shrink:0;}
+.cc-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-bottom:2px;}
+.cc-value{font-size:15px;font-weight:500;color:var(--ink);}
+
+/* FOOTER */
+footer{background:var(--ink);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-brand{font-family:'Playfair Display',serif;font-size:16px;color:var(--parchment);font-weight:700;}
+.footer-brand span{color:var(--gold);font-style:italic;}
+.footer-copy{font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;color:rgba(248,243,234,0.45);}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes barPulse{0%,100%{height:20%;}50%{height:85%;}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.8);}}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-delay{transition-delay:0.15s;}
+.reveal-delay2{transition-delay:0.3s;}
+
+@media(max-width:768px){
+  .hero{grid-template-columns:1fr;padding:100px 24px 60px;}
+  .hero-right{display:none;}
+  nav{padding:16px 24px;}
+  .nav-links{display:none;}
+  .services,.recordings,.contact{padding:60px 24px;}
+  .about{grid-template-columns:1fr;padding:60px 24px;gap:40px;}
+  .infosys-section{padding:60px 24px;}
+  .infosys-inner{grid-template-columns:1fr;gap:40px;}
+  .infosys-section::before{display:none;}
+  footer{flex-direction:column;text-align:center;padding:28px 24px;}
+  .client-strip{padding:20px 24px;}
+  .track-progress{padding:0 16px 18px 16px;}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-brand">Krishna <span>Thankey</span></div>
+  <div class="nav-links">
+    <a href="#recordings">Listen</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Voice Over Artist &amp; Storyteller</div>
+    <h1>Words that<br/><span class="italic">move</span><br/><span class="light">people.</span></h1>
+    <div class="hero-rule"></div>
+    <p class="hero-desc">A voice shaped by literature, language, and a lifelong love of the spoken word — bringing warmth, clarity, and emotional depth to every recording.</p>
+    <div class="hero-cta-row">
+      <a href="#recordings" class="btn-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+        Listen Now
+      </a>
+      <a href="#contact" class="btn-outline">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="waveform-visual">
+      <div class="wv-label">Voice Demo Reel</div>
+      <div class="wv-bars" id="hero-bars"></div>
+      <p class="wv-tagline">"My voice carries not just words, but <strong>worlds.</strong>"</p>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-box"><span class="stat-num">3+</span><span class="stat-label">Years in L&amp;D</span></div>
+      <div class="stat-box"><span class="stat-num">5</span><span class="stat-label">Voice Genres</span></div>
+      <div class="stat-box"><span class="stat-num">21K+</span><span class="stat-label">Learners Reached</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENT STRIP -->
+<div class="client-strip">
+  <span class="client-strip-label">Featured Client</span>
+  <div class="client-divider"></div>
+  <div class="infosys-tag">
+    <div class="infosys-dot"></div>
+    <span>Infosys Limited &nbsp;·&nbsp; Mini Learning Videos &nbsp;·&nbsp; Website Intros &nbsp;·&nbsp; Podcasts &nbsp;·&nbsp; E-Learning Narration</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="reveal">
+    <span class="section-eyebrow">What I Can Voice</span>
+    <h2 class="section-h2">Every format.<br/><em>Every emotion.</em></h2>
+  </div>
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <span class="service-icon">📚</span>
+      <div class="service-title">Audiobooks &amp; Literary Reading</div>
+      <div class="service-desc">Classic fiction, contemporary literature, and personal narratives — bringing characters and prose to vivid, emotional life.</div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🎓</span>
+      <div class="service-title">Educational Content &amp; Narration</div>
+      <div class="service-desc">E-learning modules, course narrations, explainer videos, and educational podcasts — delivered with clarity, warmth, and learner-first pacing.</div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🏢</span>
+      <div class="service-title">Corporate &amp; L&amp;D Content</div>
+      <div class="service-desc">Mini learning videos, website intros, internal training content, soft-skills programmes, and onboarding narrations for corporate clients.</div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🎧</span>
+      <div class="service-title">Podcasts &amp; Audio Series</div>
+      <div class="service-desc">Host narrations, intros and outros, interview bridges, and full-length podcast episodes with a warm, engaging tone.</div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🌿</span>
+      <div class="service-title">Nature &amp; Wellness Narration</div>
+      <div class="service-desc">Guided meditations, nature documentaries, wellness content, and mindfulness audio — grounded, soothing, and immersive.</div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">📣</span>
+      <div class="service-title">Storytelling &amp; Poetry</div>
+      <div class="service-desc">Expressive poetry telling, spoken word performances, brand storytelling, and creative narrative projects with genuine emotional resonance.</div>
+    </div>
+  </div>
+</section>
+
+<!-- RECORDINGS -->
+<section class="recordings" id="recordings">
+  <div class="recordings-inner">
+    <div class="reveal">
+      <span class="section-eyebrow">Selected Recordings</span>
+      <h2 class="section-h2">Five <em>voices,</em><br/>five worlds.</h2>
+    </div>
+    <div class="track-list reveal">
+
+      <!-- 1: Wuthering Heights -->
+      <div class="track" id="card-0">
+        <div class="track-header">
+          <div class="track-rank">1</div>
+          <button class="play-btn" onclick="togglePlay(0)" aria-label="Play Wuthering Heights">
+            <svg id="icon-0" width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+          </button>
+          <div class="track-info">
+            <div class="track-name">Wuthering Heights</div>
+            <div class="track-source">Emily Brontë — Classic Gothic Fiction</div>
+            <div class="track-meta">
+              <span class="track-duration" id="dur-0">—</span>
+              <span class="track-badge badge-classic">Classic</span>
+              <span class="track-stars">★★★★★</span>
+            </div>
+          </div>
+        </div>
+        <div class="track-progress">
+          <div class="progress-bar" onclick="seek(event,0)"><div class="progress-fill" id="fill-0"></div></div>
+          <div class="time-row"><span id="curr-0">0:00</span><span id="tot-0">—</span></div>
+        </div>
+        <audio id="audio-0" src="data/4__Krishna__Wuthering_heights.m4a" preload="metadata"></audio>
+      </div>
+
+      <!-- 2: Pride & Prejudice -->
+      <div class="track" id="card-1">
+        <div class="track-header">
+          <div class="track-rank">2</div>
+          <button class="play-btn" onclick="togglePlay(1)" aria-label="Play Pride and Prejudice">
+            <svg id="icon-1" width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+          </button>
+          <div class="track-info">
+            <div class="track-name">Pride &amp; Prejudice</div>
+            <div class="track-source">Jane Austen — Classic Fiction</div>
+            <div class="track-meta">
+              <span class="track-duration" id="dur-1">—</span>
+              <span class="track-badge badge-classic">Classic</span>
+              <span class="track-stars">★★★★★</span>
+            </div>
+          </div>
+        </div>
+        <div class="track-progress">
+          <div class="progress-bar" onclick="seek(event,1)"><div class="progress-fill" id="fill-1"></div></div>
+          <div class="time-row"><span id="curr-1">0:00</span><span id="tot-1">—</span></div>
+        </div>
+        <audio id="audio-1" src="data/5__Pride_and_prejudice.m4a" preload="metadata"></audio>
+      </div>
+
+      <!-- 3: My Grandmother -->
+      <div class="track" id="card-2">
+        <div class="track-header">
+          <div class="track-rank">3</div>
+          <button class="play-btn" onclick="togglePlay(2)" aria-label="Play My Grandmother">
+            <svg id="icon-2" width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+          </button>
+          <div class="track-info">
+            <div class="track-name">My Grandmother</div>
+            <div class="track-source">Book Excerpt — Personal Narrative</div>
+            <div class="track-meta">
+              <span class="track-duration" id="dur-2">—</span>
+              <span class="track-badge badge-personal">Narrative</span>
+              <span class="track-stars">★★★★★</span>
+            </div>
+          </div>
+        </div>
+        <div class="track-progress">
+          <div class="progress-bar" onclick="seek(event,2)"><div class="progress-fill" id="fill-2"></div></div>
+          <div class="time-row"><span id="curr-2">0:00</span><span id="tot-2">—</span></div>
+        </div>
+        <audio id="audio-2" src="data/1__My_grandmother.m4a" preload="metadata"></audio>
+      </div>
+
+      <!-- 4: Forest & Nature -->
+      <div class="track" id="card-3">
+        <div class="track-header">
+          <div class="track-rank">4</div>
+          <button class="play-btn" onclick="togglePlay(3)" aria-label="Play Forest and Nature">
+            <svg id="icon-3" width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+          </button>
+          <div class="track-info">
+            <div class="track-name">Forest &amp; Nature</div>
+            <div class="track-source">Descriptive Nature Narration</div>
+            <div class="track-meta">
+              <span class="track-duration" id="dur-3">—</span>
+              <span class="track-badge badge-nature">Nature</span>
+              <span class="track-stars">★★★★½</span>
+            </div>
+          </div>
+        </div>
+        <div class="track-progress">
+          <div class="progress-bar" onclick="seek(event,3)"><div class="progress-fill" id="fill-3"></div></div>
+          <div class="time-row"><span id="curr-3">0:00</span><span id="tot-3">—</span></div>
+        </div>
+        <audio id="audio-3" src="data/3__Krishna_Forest-_nature.m4a" preload="metadata"></audio>
+      </div>
+
+      <!-- 5: Chitra Divakaruni -->
+      <div class="track" id="card-4">
+        <div class="track-header">
+          <div class="track-rank">5</div>
+          <button class="play-btn" onclick="togglePlay(4)" aria-label="Play Chitra Divakaruni">
+            <svg id="icon-4" width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+          </button>
+          <div class="track-info">
+            <div class="track-name">Chitra Banerjee Divakaruni</div>
+            <div class="track-source">Literary Prose Reading</div>
+            <div class="track-meta">
+              <span class="track-duration" id="dur-4">—</span>
+              <span class="track-badge badge-literary">Literary</span>
+              <span class="track-stars">★★★★½</span>
+            </div>
+          </div>
+        </div>
+        <div class="track-progress">
+          <div class="progress-bar" onclick="seek(event,4)"><div class="progress-fill" id="fill-4"></div></div>
+          <div class="time-row"><span id="curr-4">0:00</span><span id="tot-4">—</span></div>
+        </div>
+        <audio id="audio-4" src="data/2__Chitra_devkaruni.m4a" preload="metadata"></audio>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INFOSYS -->
+<section class="infosys-section">
+  <div class="infosys-inner">
+    <div class="infosys-left reveal">
+      <span class="section-eyebrow">Featured Client Work</span>
+      <h2 class="infosys-h">Voice of<br/><em>Infosys Limited</em></h2>
+      <p class="infosys-desc">Trusted to voice corporate learning content for one of India's largest technology organisations — reaching thousands of employees across platforms and programmes.</p>
+    </div>
+    <div class="infosys-right reveal reveal-delay">
+      <div class="infosys-card"><span class="ic-icon">🎬</span><div><div class="ic-title">Mini Learning Videos</div><div class="ic-sub">Bite-sized training content · Infosys ETA Unit</div></div></div>
+      <div class="infosys-card"><span class="ic-icon">🌐</span><div><div class="ic-title">Website Intros &amp; Brand Narration</div><div class="ic-sub">Corporate voice · digital platforms</div></div></div>
+      <div class="infosys-card"><span class="ic-icon">🎙️</span><div><div class="ic-title">Podcasts &amp; Audio Series</div><div class="ic-sub">Internal &amp; external podcast narration</div></div></div>
+      <div class="infosys-card"><span class="ic-icon">📖</span><div><div class="ic-title">E-Learning &amp; Course Narration</div><div class="ic-sub">Learner-facing content · Pragati programme</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-left reveal">
+    <span class="section-eyebrow">The Voice Behind the Words</span>
+    <div style="height:16px;"></div>
+    <div class="about-quote-block">
+      <p class="about-text">I am <strong>Krishna Thankey</strong> — a trainer, facilitator, educator and storyteller with a deep love for language. With a background in <strong>English Literature</strong> and <strong>3+ years of experience in L&amp;D</strong>, coaching communication and spoken expression, my voice carries not just words, but <strong>worlds.</strong> From intimate personal narratives to the grand halls of classic British fiction, I bring <strong>warmth, clarity, and emotional depth</strong> to every recording.</p>
+      <div class="about-tags">
+        <span class="atag">Audiobooks</span>
+        <span class="atag">Storytelling</span>
+        <span class="atag">E-Learning</span>
+        <span class="atag">Poetry</span>
+        <span class="atag">Corporate Narration</span>
+        <span class="atag">Educational Content</span>
+        <span class="atag">Wellness</span>
+        <span class="atag">Podcasts</span>
+      </div>
+    </div>
+  </div>
+  <div class="about-right reveal reveal-delay">
+    <span class="section-eyebrow">Background &amp; Credentials</span>
+    <div style="height:16px;"></div>
+    <div class="credential-list">
+      <div class="credential">
+        <div class="cred-icon">🎓</div>
+        <div><div class="cred-title">M.A. &amp; B.A., English Literature</div><div class="cred-sub">Jamshedpur Women's College · Deep grounding in language, literary analysis, and expressive communication.</div></div>
+      </div>
+      <div class="credential">
+        <div class="cred-icon">📜</div>
+        <div><div class="cred-title">Certified Instructional Design Practitioner</div><div class="cred-sub">KPMG (2024) · Expert in designing learning experiences that drive real behavioural change.</div></div>
+      </div>
+      <div class="credential">
+        <div class="cred-icon">🏢</div>
+        <div><div class="cred-title">Senior Associate — Learning &amp; Development</div><div class="cred-sub">Infosys Limited, Bangalore (2022–2025) · Facilitated Communication, Storytelling, Spoken English &amp; Soft Skills for 21,000+ learners.</div></div>
+      </div>
+      <div class="credential">
+        <div class="cred-icon">🌍</div>
+        <div><div class="cred-title">Global Recognition</div><div class="cred-sub">G20 Summit Representative (2023) · Global Talent, UNLEASH at Mysore (2022).</div></div>
+      </div>
+      <div class="credential">
+        <div class="cred-icon">🏫</div>
+        <div><div class="cred-title">PGT English Teacher</div><div class="cred-sub">Tarapore School (ISC) &amp; Chinmaya Vidyalaya (CBSE) · Built spoken fluency, poetry telling, and expressive storytelling in classrooms for years.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="reveal">
+    <span class="section-eyebrow">Let's Work Together</span>
+    <h2 class="section-h2">Let's create something<br/><em>unforgettable.</em></h2>
+    <p class="contact-sub">Open to voice over projects in audiobooks, e-learning, corporate narration, podcasts, educational content, and more.</p>
+  </div>
+  <div class="contact-cards reveal">
+    <a href="mailto:krishnathankeykt@gmail.com" class="contact-card">
+      <span class="cc-icon">✉️</span>
+      <div><div class="cc-label">Email</div><div class="cc-value">krishnathankeykt@gmail.com</div></div>
+    </a>
+    <div class="contact-card">
+      <span class="cc-icon">📞</span>
+      <div><div class="cc-label">Phone</div><div class="cc-value">+91 6200745050</div></div>
+    </div>
+    <div class="contact-card">
+      <span class="cc-icon">📍</span>
+      <div><div class="cc-label">Location</div><div class="cc-value">Pune, Maharashtra</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">Krishna <span>Thankey</span></div>
+  <div class="footer-copy">© 2025 · All recordings are original performances · Voice Over Artist &amp; Learning Professional</div>
+</footer>
+
+<script>
+// Waveform bars
+const heroBarContainer=document.getElementById('hero-bars');
+for(let i=0;i<28;i++){
+  const bar=document.createElement('div');
+  bar.className='wv-bar';
+  bar.style.height=(20+Math.random()*60)+'%';
+  bar.style.animationDuration=(1.2+Math.random()*1.2)+'s';
+  bar.style.animationDelay=(Math.random()*1)+'s';
+  heroBarContainer.appendChild(bar);
+}
+
+// Audio
+const audios=Array.from({length:5},(_,i)=>document.getElementById(`audio-${i}`));
+let currentPlaying=null, rafId=null;
+
+audios.forEach((audio,i)=>{
+  audio.addEventListener('loadedmetadata',()=>{
+    const t=fmt(audio.duration);
+    document.getElementById(`dur-${i}`).textContent=t;
+    document.getElementById(`tot-${i}`).textContent=t;
+  });
+  audio.addEventListener('ended',()=>resetTrack(i));
+});
+
+function fmt(s){
+  if(isNaN(s)||!isFinite(s))return'—';
+  return`${Math.floor(s/60)}:${Math.floor(s%60).toString().padStart(2,'0')}`;
+}
+function togglePlay(i){
+  const audio=audios[i];
+  if(currentPlaying!==null&&currentPlaying!==i)resetTrack(currentPlaying);
+  if(audio.paused){
+    audio.play();currentPlaying=i;
+    document.getElementById(`card-${i}`).classList.add('playing');
+    setIcon(i,false);tick();
+  }else{
+    audio.pause();cancelAnimationFrame(rafId);
+    setIcon(i,true);
+    document.getElementById(`card-${i}`).classList.remove('playing');
+    currentPlaying=null;
+  }
+}
+function resetTrack(i){
+  const audio=audios[i];
+  audio.pause();audio.currentTime=0;cancelAnimationFrame(rafId);
+  setIcon(i,true);
+  document.getElementById(`fill-${i}`).style.width='0%';
+  document.getElementById(`curr-${i}`).textContent='0:00';
+  document.getElementById(`card-${i}`).classList.remove('playing');
+  if(currentPlaying===i)currentPlaying=null;
+}
+function setIcon(i,isPlay){
+  document.getElementById(`icon-${i}`).innerHTML=isPlay
+    ?'<polygon points="5,3 19,12 5,21"/>'
+    :'<rect x="5" y="3" width="4" height="18" rx="1"/><rect x="15" y="3" width="4" height="18" rx="1"/>';
+}
+function tick(){
+  if(currentPlaying===null)return;
+  const i=currentPlaying,audio=audios[i];
+  if(audio.duration){
+    document.getElementById(`fill-${i}`).style.width=(audio.currentTime/audio.duration*100)+'%';
+    document.getElementById(`curr-${i}`).textContent=fmt(audio.currentTime);
+  }
+  rafId=requestAnimationFrame(tick);
+}
+function seek(event,i){
+  const bar=event.currentTarget,rect=bar.getBoundingClientRect();
+  if(audios[i].duration)audios[i].currentTime=((event.clientX-rect.left)/rect.width)*audios[i].duration;
+}
+
+// Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
+
+// Reveal
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
