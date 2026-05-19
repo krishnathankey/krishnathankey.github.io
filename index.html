@@ -113,7 +113,6 @@ nav.scrolled{padding:12px 48px;background:rgba(248,243,234,0.97);box-shadow:0 2p
 .badge-personal{background:rgba(74,92,71,0.1);color:var(--sage);border:1px solid rgba(74,92,71,0.2);}
 .badge-literary{background:rgba(184,136,42,0.1);color:var(--gold);border:1px solid rgba(184,136,42,0.25);}
 .badge-nature{background:rgba(74,92,71,0.12);color:var(--sage);border:1px solid rgba(74,92,71,0.2);}
-.track-stars{color:var(--gold);font-size:11px;letter-spacing:1px;}
 .track-progress{padding:0 28px 22px 88px;}
 .progress-bar{width:100%;height:3px;background:rgba(184,136,42,0.15);border-radius:2px;cursor:pointer;position:relative;}
 .progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--gold),var(--rust));border-radius:2px;transition:width 0.1s linear;position:relative;}
@@ -128,12 +127,12 @@ nav.scrolled{padding:12px 48px;background:rgba(248,243,234,0.97);box-shadow:0 2p
 .infosys-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
 .infosys-h{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:400;color:var(--parchment);line-height:1.15;margin-bottom:24px;margin-top:10px;}
 .infosys-h em{font-style:italic;color:var(--gold-light);}
-.infosys-desc{font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;font-weight:300;color:rgba(248,243,234,0.75);line-height:1.8;}
+.infosys-desc{font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;font-weight:300;color:var(--gold-light);line-height:1.8;}
 .infosys-right{display:flex;flex-direction:column;gap:12px;}
 .infosys-card{background:rgba(255,255,255,0.05);border:1px solid rgba(184,136,42,0.2);border-radius:3px;padding:20px 24px;display:flex;align-items:center;gap:16px;transition:all 0.3s ease;}
 .infosys-card:hover{background:rgba(184,136,42,0.1);border-color:rgba(184,136,42,0.4);transform:translateX(6px);}
 .ic-icon{font-size:22px;flex-shrink:0;}
-.ic-title{font-size:14px;font-weight:600;color:var(--parchment);margin-bottom:2px;letter-spacing:0.3px;}
+.ic-title{font-size:14px;font-weight:600;color:rgb(0,0,0);margin-bottom:2px;letter-spacing:0.3px;}
 .ic-sub{font-size:12px;color:rgba(184,136,42,0.8);letter-spacing:0.5px;}
 
 /* ABOUT */
@@ -200,8 +199,8 @@ footer{background:var(--ink);padding:32px 48px;display:flex;justify-content:spac
 <nav id="nav">
   <div class="nav-brand">Krishna <span>Thankey</span></div>
   <div class="nav-links">
-    <a href="#recordings">Listen</a>
     <a href="#services">Services</a>
+    <a href="#recordings">Listen</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </div>
@@ -229,7 +228,7 @@ footer{background:var(--ink);padding:32px 48px;display:flex;justify-content:spac
       <p class="wv-tagline">"My voice carries not just words, but <strong>worlds.</strong>"</p>
     </div>
     <div class="hero-stats">
-      <div class="stat-box"><span class="stat-num">3+</span><span class="stat-label">Years in L&amp;D</span></div>
+      <div class="stat-box"><span class="stat-num">8+</span><span class="stat-label">L&amp;D and Literature</span></div>
       <div class="stat-box"><span class="stat-num">5</span><span class="stat-label">Voice Genres</span></div>
       <div class="stat-box"><span class="stat-num">21K+</span><span class="stat-label">Learners Reached</span></div>
     </div>
@@ -274,6 +273,11 @@ footer{background:var(--ink);padding:32px 48px;display:flex;justify-content:spac
       <div class="service-desc">Host narrations, intros and outros, interview bridges, and full-length podcast episodes with a warm, engaging tone.</div>
     </div>
     <div class="service-card">
+      <span class="service-icon">📞</span>
+      <div class="service-title">IVR </div>
+      <div class="service-desc"> From welcome greetings to on-hold messaging, I record clear professional IVR voice-overs and automated prompts.</div>
+    </div>
+    <div class="service-card">
       <span class="service-icon">🌿</span>
       <div class="service-title">Nature &amp; Wellness Narration</div>
       <div class="service-desc">Guided meditations, nature documentaries, wellness content, and mindfulness audio — grounded, soothing, and immersive.</div>
@@ -290,25 +294,23 @@ footer{background:var(--ink);padding:32px 48px;display:flex;justify-content:spac
 <section class="recordings" id="recordings">
   <div class="recordings-inner">
     <div class="reveal">
-      <span class="section-eyebrow">Selected Recordings</span>
-      <h2 class="section-h2">Five <em>voices,</em><br/>five worlds.</h2>
+      <h2 class="section-h2">Voice-overs</h2>
     </div>
     <div class="track-list reveal">
 
-      <!-- 1: Wuthering Heights -->
+      <!-- 1: IVR -->
       <div class="track" id="card-0">
         <div class="track-header">
           <div class="track-rank">1</div>
-          <button class="play-btn" onclick="togglePlay(0)" aria-label="Play Wuthering Heights">
+          <button class="play-btn" onclick="togglePlay(0)" aria-label="Play IVR">
             <svg id="icon-0" width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
           </button>
           <div class="track-info">
-            <div class="track-name">Wuthering Heights</div>
-            <div class="track-source">Emily Brontë — Classic Gothic Fiction</div>
+            <div class="track-name">IVR</div>
+            <div class="track-source">Menu Prompts</div>
             <div class="track-meta">
               <span class="track-duration" id="dur-0">—</span>
-              <span class="track-badge badge-classic">Classic</span>
-              <span class="track-stars">★★★★★</span>
+              <span class="track-badge badge-classic">Functional</span>
             </div>
           </div>
         </div>
@@ -316,23 +318,22 @@ footer{background:var(--ink);padding:32px 48px;display:flex;justify-content:spac
           <div class="progress-bar" onclick="seek(event,0)"><div class="progress-fill" id="fill-0"></div></div>
           <div class="time-row"><span id="curr-0">0:00</span><span id="tot-0">—</span></div>
         </div>
-        <audio id="audio-0" src="data/4__Krishna__Wuthering_heights.m4a" preload="metadata"></audio>
+        <audio id="audio-0" src="data/IVR.mp3" preload="metadata"></audio>
       </div>
 
-      <!-- 2: Pride & Prejudice -->
+      <!-- 2: Mother -->
       <div class="track" id="card-1">
         <div class="track-header">
           <div class="track-rank">2</div>
-          <button class="play-btn" onclick="togglePlay(1)" aria-label="Play Pride and Prejudice">
+          <button class="play-btn" onclick="togglePlay(1)" aria-label="Play Mother">
             <svg id="icon-1" width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
           </button>
           <div class="track-info">
-            <div class="track-name">Pride &amp; Prejudice</div>
-            <div class="track-source">Jane Austen — Classic Fiction</div>
+            <div class="track-name">Mother</div>
+            <div class="track-source">Emotional</div>
             <div class="track-meta">
               <span class="track-duration" id="dur-1">—</span>
-              <span class="track-badge badge-classic">Classic</span>
-              <span class="track-stars">★★★★★</span>
+              <span class="track-badge badge-literary">Poetry</span>
             </div>
           </div>
         </div>
@@ -340,23 +341,22 @@ footer{background:var(--ink);padding:32px 48px;display:flex;justify-content:spac
           <div class="progress-bar" onclick="seek(event,1)"><div class="progress-fill" id="fill-1"></div></div>
           <div class="time-row"><span id="curr-1">0:00</span><span id="tot-1">—</span></div>
         </div>
-        <audio id="audio-1" src="data/5__Pride_and_prejudice.m4a" preload="metadata"></audio>
+        <audio id="audio-1" src="data/mother.m4a" preload="metadata"></audio>
       </div>
 
-      <!-- 3: My Grandmother -->
+      <!-- 3: Wuthering Heights -->
       <div class="track" id="card-2">
         <div class="track-header">
           <div class="track-rank">3</div>
-          <button class="play-btn" onclick="togglePlay(2)" aria-label="Play My Grandmother">
+          <button class="play-btn" onclick="togglePlay(2)" aria-label="Play Wuthering Heights">
             <svg id="icon-2" width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
           </button>
           <div class="track-info">
-            <div class="track-name">My Grandmother</div>
-            <div class="track-source">Book Excerpt — Personal Narrative</div>
+            <div class="track-name">Wuthering Heights</div>
+            <div class="track-source">Emily Brontë — Classic Gothic Fiction</div>
             <div class="track-meta">
               <span class="track-duration" id="dur-2">—</span>
-              <span class="track-badge badge-personal">Narrative</span>
-              <span class="track-stars">★★★★★</span>
+              <span class="track-badge badge-classic">Classic</span>
             </div>
           </div>
         </div>
@@ -364,23 +364,22 @@ footer{background:var(--ink);padding:32px 48px;display:flex;justify-content:spac
           <div class="progress-bar" onclick="seek(event,2)"><div class="progress-fill" id="fill-2"></div></div>
           <div class="time-row"><span id="curr-2">0:00</span><span id="tot-2">—</span></div>
         </div>
-        <audio id="audio-2" src="data/1__My_grandmother.m4a" preload="metadata"></audio>
+        <audio id="audio-2" src="data/4__Krishna__Wuthering_heights.m4a" preload="metadata"></audio>
       </div>
 
-      <!-- 4: Forest & Nature -->
+      <!-- 4: Pride & Prejudice -->
       <div class="track" id="card-3">
         <div class="track-header">
           <div class="track-rank">4</div>
-          <button class="play-btn" onclick="togglePlay(3)" aria-label="Play Forest and Nature">
+          <button class="play-btn" onclick="togglePlay(3)" aria-label="Play Pride and Prejudice">
             <svg id="icon-3" width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
           </button>
           <div class="track-info">
-            <div class="track-name">Forest &amp; Nature</div>
-            <div class="track-source">Descriptive Nature Narration</div>
+            <div class="track-name">Pride &amp; Prejudice</div>
+            <div class="track-source">Jane Austen — Classic Fiction</div>
             <div class="track-meta">
               <span class="track-duration" id="dur-3">—</span>
-              <span class="track-badge badge-nature">Nature</span>
-              <span class="track-stars">★★★★½</span>
+              <span class="track-badge badge-classic">Classic</span>
             </div>
           </div>
         </div>
@@ -388,23 +387,22 @@ footer{background:var(--ink);padding:32px 48px;display:flex;justify-content:spac
           <div class="progress-bar" onclick="seek(event,3)"><div class="progress-fill" id="fill-3"></div></div>
           <div class="time-row"><span id="curr-3">0:00</span><span id="tot-3">—</span></div>
         </div>
-        <audio id="audio-3" src="data/3__Krishna_Forest-_nature.m4a" preload="metadata"></audio>
+        <audio id="audio-3" src="data/5__Pride_and_prejudice.m4a" preload="metadata"></audio>
       </div>
 
-      <!-- 5: Chitra Divakaruni -->
+      <!-- 5: My Grandmother -->
       <div class="track" id="card-4">
         <div class="track-header">
           <div class="track-rank">5</div>
-          <button class="play-btn" onclick="togglePlay(4)" aria-label="Play Chitra Divakaruni">
+          <button class="play-btn" onclick="togglePlay(4)" aria-label="Play My Grandmother">
             <svg id="icon-4" width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
           </button>
           <div class="track-info">
-            <div class="track-name">Chitra Banerjee Divakaruni</div>
-            <div class="track-source">Literary Prose Reading</div>
+            <div class="track-name">My Grandmother</div>
+            <div class="track-source">Book Excerpt — Personal Narrative</div>
             <div class="track-meta">
               <span class="track-duration" id="dur-4">—</span>
-              <span class="track-badge badge-literary">Literary</span>
-              <span class="track-stars">★★★★½</span>
+              <span class="track-badge badge-personal">Narrative</span>
             </div>
           </div>
         </div>
@@ -412,7 +410,53 @@ footer{background:var(--ink);padding:32px 48px;display:flex;justify-content:spac
           <div class="progress-bar" onclick="seek(event,4)"><div class="progress-fill" id="fill-4"></div></div>
           <div class="time-row"><span id="curr-4">0:00</span><span id="tot-4">—</span></div>
         </div>
-        <audio id="audio-4" src="data/2__Chitra_devkaruni.m4a" preload="metadata"></audio>
+        <audio id="audio-4" src="data/1__My_grandmother.m4a" preload="metadata"></audio>
+      </div>
+
+      <!-- 6: Forest & Nature -->
+      <div class="track" id="card-5">
+        <div class="track-header">
+          <div class="track-rank">6</div>
+          <button class="play-btn" onclick="togglePlay(5)" aria-label="Play Forest and Nature">
+            <svg id="icon-5" width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+          </button>
+          <div class="track-info">
+            <div class="track-name">Forest &amp; Nature</div>
+            <div class="track-source">Descriptive Nature Narration</div>
+            <div class="track-meta">
+              <span class="track-duration" id="dur-5">—</span>
+              <span class="track-badge badge-nature">Nature</span>
+            </div>
+          </div>
+        </div>
+        <div class="track-progress">
+          <div class="progress-bar" onclick="seek(event,5)"><div class="progress-fill" id="fill-5"></div></div>
+          <div class="time-row"><span id="curr-5">0:00</span><span id="tot-5">—</span></div>
+        </div>
+        <audio id="audio-5" src="data/3__Krishna_Forest-_nature.m4a" preload="metadata"></audio>
+      </div>
+
+      <!-- 7: Chitra Divakaruni -->
+      <div class="track" id="card-6">
+        <div class="track-header">
+          <div class="track-rank">7</div>
+          <button class="play-btn" onclick="togglePlay(6)" aria-label="Play Chitra Divakaruni">
+            <svg id="icon-6" width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+          </button>
+          <div class="track-info">
+            <div class="track-name">Chitra Banerjee Divakaruni</div>
+            <div class="track-source">Literary Prose Reading</div>
+            <div class="track-meta">
+              <span class="track-duration" id="dur-6">—</span>
+              <span class="track-badge badge-literary">Literary</span>
+            </div>
+          </div>
+        </div>
+        <div class="track-progress">
+          <div class="progress-bar" onclick="seek(event,6)"><div class="progress-fill" id="fill-6"></div></div>
+          <div class="time-row"><span id="curr-6">0:00</span><span id="tot-6">—</span></div>
+        </div>
+        <audio id="audio-6" src="data/2__Chitra_devkaruni.m4a" preload="metadata"></audio>
       </div>
 
     </div>
@@ -423,15 +467,15 @@ footer{background:var(--ink);padding:32px 48px;display:flex;justify-content:spac
 <section class="infosys-section">
   <div class="infosys-inner">
     <div class="infosys-left reveal">
-      <span class="section-eyebrow">Featured Client Work</span>
-      <h2 class="infosys-h">Voice of<br/><em>Infosys Limited</em></h2>
-      <p class="infosys-desc">Trusted to voice corporate learning content for one of India's largest technology organisations — reaching thousands of employees across platforms and programmes.</p>
+      <span class="section-eyebrow">Client Work</span>
+      <h2 class="infosys-h">Voice of<br/><em>Ex-Infoscion - Infosys Limited</em></h2>
+      <p class="infosys-desc">Trusted to voice corporate learning content for one of India's largest technology organisations — reaching thousands of employees and learners across platforms and programmes.</p>
     </div>
     <div class="infosys-right reveal reveal-delay">
       <div class="infosys-card"><span class="ic-icon">🎬</span><div><div class="ic-title">Mini Learning Videos</div><div class="ic-sub">Bite-sized training content · Infosys ETA Unit</div></div></div>
       <div class="infosys-card"><span class="ic-icon">🌐</span><div><div class="ic-title">Website Intros &amp; Brand Narration</div><div class="ic-sub">Corporate voice · digital platforms</div></div></div>
       <div class="infosys-card"><span class="ic-icon">🎙️</span><div><div class="ic-title">Podcasts &amp; Audio Series</div><div class="ic-sub">Internal &amp; external podcast narration</div></div></div>
-      <div class="infosys-card"><span class="ic-icon">📖</span><div><div class="ic-title">E-Learning &amp; Course Narration</div><div class="ic-sub">Learner-facing content · Pragati programme</div></div></div>
+      <div class="infosys-card"><span class="ic-icon">📖</span><div><div class="ic-title">E-Learning &amp; Course Narration</div><div class="ic-sub">Learner-facing content</div></div></div>
     </div>
   </div>
 </section>
@@ -442,7 +486,7 @@ footer{background:var(--ink);padding:32px 48px;display:flex;justify-content:spac
     <span class="section-eyebrow">The Voice Behind the Words</span>
     <div style="height:16px;"></div>
     <div class="about-quote-block">
-      <p class="about-text">I am <strong>Krishna Thankey</strong> — a trainer, facilitator, educator and storyteller with a deep love for language. With a background in <strong>English Literature</strong> and <strong>3+ years of experience in L&amp;D</strong>, coaching communication and spoken expression, my voice carries not just words, but <strong>worlds.</strong> From intimate personal narratives to the grand halls of classic British fiction, I bring <strong>warmth, clarity, and emotional depth</strong> to every recording.</p>
+      <p class="about-text">I am <strong>Krishna Thankey</strong> — a trainer, facilitator, educator and storyteller with a deep love for language. With a background in <strong>English Literature</strong> and <strong>8+ years of experience in L&amp;D and Academics</strong>, coaching communication and spoken expression, my voice carries not just words, but <strong>worlds.</strong> From intimate personal narratives to the grand halls of classic British fiction, I bring <strong>warmth, clarity, and emotional depth</strong> to every recording.</p>
       <div class="about-tags">
         <span class="atag">Audiobooks</span>
         <span class="atag">Storytelling</span>
@@ -450,7 +494,7 @@ footer{background:var(--ink);padding:32px 48px;display:flex;justify-content:spac
         <span class="atag">Poetry</span>
         <span class="atag">Corporate Narration</span>
         <span class="atag">Educational Content</span>
-        <span class="atag">Wellness</span>
+        <span class="atag">IVR</span>
         <span class="atag">Podcasts</span>
       </div>
     </div>
@@ -461,7 +505,7 @@ footer{background:var(--ink);padding:32px 48px;display:flex;justify-content:spac
     <div class="credential-list">
       <div class="credential">
         <div class="cred-icon">🎓</div>
-        <div><div class="cred-title">M.A. &amp; B.A., English Literature</div><div class="cred-sub">Jamshedpur Women's College · Deep grounding in language, literary analysis, and expressive communication.</div></div>
+        <div><div class="cred-title">M.A. &amp; B.A., English Literature</div><div class="cred-sub">Deep grounding in language, literary analysis, and expressive communication.</div></div>
       </div>
       <div class="credential">
         <div class="cred-icon">📜</div>
@@ -488,7 +532,7 @@ footer{background:var(--ink);padding:32px 48px;display:flex;justify-content:spac
   <div class="reveal">
     <span class="section-eyebrow">Let's Work Together</span>
     <h2 class="section-h2">Let's create something<br/><em>unforgettable.</em></h2>
-    <p class="contact-sub">Open to voice over projects in audiobooks, e-learning, corporate narration, podcasts, educational content, and more.</p>
+    <p class="contact-sub">Open to voice over projects in audiobooks, e-learning, corporate narration, podcasts, educational content, IVR and more.</p>
   </div>
   <div class="contact-cards reveal">
     <a href="mailto:krishnathankeykt@gmail.com" class="contact-card">
@@ -508,7 +552,7 @@ footer{background:var(--ink);padding:32px 48px;display:flex;justify-content:spac
 
 <footer>
   <div class="footer-brand">Krishna <span>Thankey</span></div>
-  <div class="footer-copy">© 2025 · All recordings are original performances · Voice Over Artist &amp; Learning Professional</div>
+  <div class="footer-copy">© 2026 · All recordings are original performances · Voice Over Artist &amp; Learning Professional</div>
 </footer>
 
 <script>
@@ -524,7 +568,7 @@ for(let i=0;i<28;i++){
 }
 
 // Audio
-const audios=Array.from({length:5},(_,i)=>document.getElementById(`audio-${i}`));
+const audios=Array.from({length:7},(_,i)=>document.getElementById(`audio-${i}`));
 let currentPlaying=null, rafId=null;
 
 audios.forEach((audio,i)=>{
